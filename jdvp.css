@@ -98,4 +98,114 @@ footer h1{
     background-color: #ffffff;
 }
 
-/* Removed old card overrides to keep consistent blue headers */
+/* Modal Styling */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.3); /* Lighter overlay for better glass effect */
+    backdrop-filter: blur(6px); /* Blurs the background page */
+    animation: fadeIn 0.4s ease;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.7); /* Translucent background */
+    margin: 10% auto; 
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.8); /* Refined glass border */
+    width: 80%; 
+    max-width: 500px;
+    border-radius: 20px; /* Softer corners */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2); /* Deep, soft shadow */
+    position: relative;
+    animation: slideIn 0.4s ease;
+    backdrop-filter: blur(16px); /* Blurs whatever is behind the card */
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.close {
+    color: #555;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1;
+}
+
+.close:hover,
+.close:focus {
+    color: #0056b3;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.open-modal-btn {
+    background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px; /* Pill shape */
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px auto;
+    font-weight: 600;
+    display: block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+}
+
+.open-modal-btn:hover {
+    background: linear-gradient(135deg, #004494 0%, #003370 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 86, 179, 0.4);
+}
+
+.modal-header {
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 86, 179, 0.2);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #0056b3;
+    font-weight: 700;
+}
+
+.modal-body p {
+    background: rgba(255, 255, 255, 0.6);
+    border-left: 5px solid #0056b3;
+    margin-bottom: 15px;
+    color: #333;
+    padding: 15px;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.modal-body p:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-50px) scale(0.9); opacity: 0;}
+    to {transform: translateY(0) scale(1); opacity: 1;}
+}
